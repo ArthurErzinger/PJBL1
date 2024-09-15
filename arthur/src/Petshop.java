@@ -2,12 +2,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Petshop {
-
-    // Mantenha a lista de tutores fora do método, para que seja acessível globalmente
-    static ArrayList<Tutor> listaDeTutores = new ArrayList<>();
+	static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("***** ESCOLHER UMA OPÇÃO *****\n"
@@ -21,10 +18,10 @@ public class Petshop {
 
             switch (opcao) {
                 case "c":
-                    cadastroTutor(scanner);  // Passe o scanner como argumento
+                    Tutor.cadastroTutor();  // Passe o scanner como argumento
                     break;
                 case "i":
-                    imprimirTutores();  // Função para imprimir todos os tutores cadastrados
+                    Tutor.imprimirTutores();  // Função para imprimir todos os tutores cadastrados
                     break;
                 case "b":
                     System.out.println("Função buscar ainda não implementada.");
@@ -42,37 +39,30 @@ public class Petshop {
         }
     }
 
-    // Método para cadastrar tutores
-    static void cadastroTutor(Scanner scanner) {
-        System.out.println("Digite o nome do tutor:");
-        String nome = scanner.nextLine();
-        System.out.println("Digite a idade do tutor:");
-        int idade = Integer.parseInt(scanner.nextLine());
-        System.out.println("Digite o endereço do tutor:");
-        String endereco = scanner.nextLine();
-        System.out.println("Digite o código do tutor:");
-        String codigo = scanner.nextLine();
 
-        // Criando um novo tutor
-        Tutor tutor = new Tutor(nome, idade, endereco, codigo);
-        listaDeTutores.add(tutor);
-
-        System.out.println("Tutor cadastrado com sucesso!");
-    }
 
     // Método para imprimir todos os tutores
-    static void imprimirTutores() {
-        if (listaDeTutores.isEmpty()) {
-            System.out.println("Nenhum tutor cadastrado.");
-        } else {
-            for (Tutor tutor : listaDeTutores) {
-                System.out.println("Nome: " + tutor.nome + ", Idade: " + tutor.idade 
-                        + ", Endereço: " + tutor.endereco + ", Código: " + tutor.codigo);
-            }
-        }
-    }
+    // static void imprimirTutores() {
+    //     if (listaDeTutores.isEmpty()) {
+    //         System.out.println("Nenhum tutor cadastrado.");
+    //     } else {
+    //         for (Tutor tutor : listaDeTutores) {
+    //             System.out.println("Nome: " + tutor.getNome()+ ", Idade: " + tutor.getIdade() 
+    //                     + ", Endereço: " + tutor.getEndereco() + ", Código: \n" + tutor.getCodigo()
+	// 					+ "Pets: \n"
+	// 					+ tutor);
+    //         }
+    //     }
+    // }
 
-	static void cadastrarPets(){
-		
-	}
+	// static void cadastrarPets(){
+	// 	System.out.println("Digite o nome do pet:");
+    //     String nome = scanner.nextLine();
+    //     System.out.println("Digite o tipo do pet:");
+    //     String tipo = scanner.nextLine();
+
+    //     // Criando um novo tutor
+    //     Pet pet = new Pet(nome, tipo);
+	// 	Tutor.pets.add(pet);
+	// }
 }
