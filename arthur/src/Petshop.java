@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Petshop {
@@ -18,20 +17,21 @@ public class Petshop {
 
             switch (opcao) {
                 case "c":
-                    Tutor.cadastroTutor();  // Passe o scanner como argumento
+                    Tutor.cadastroTutor();
                     break;
                 case "i":
-                    Tutor.imprimirTutores();  // Função para imprimir todos os tutores cadastrados
+                    Tutor.imprimirTutores();
                     break;
                 case "b":
-                    System.out.println("Função buscar ainda não implementada.");
+                    Tutor.buscarCodigo();
                     break;
                 case "e":
-                    System.out.println("Função excluir ainda não implementada.");
+                    Tutor.excluirCodigo();
                     break;
                 case "x":
-                    scanner.close();  // Fechar o scanner ao encerrar
-                    return;  // Termina a execução do método main
+					System.out.println("--- Programa de cadastro encerrado ---");
+                    scanner.close();
+                    return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
                     break;
@@ -39,30 +39,4 @@ public class Petshop {
         }
     }
 
-
-
-    // Método para imprimir todos os tutores
-    // static void imprimirTutores() {
-    //     if (listaDeTutores.isEmpty()) {
-    //         System.out.println("Nenhum tutor cadastrado.");
-    //     } else {
-    //         for (Tutor tutor : listaDeTutores) {
-    //             System.out.println("Nome: " + tutor.getNome()+ ", Idade: " + tutor.getIdade() 
-    //                     + ", Endereço: " + tutor.getEndereco() + ", Código: \n" + tutor.getCodigo()
-	// 					+ "Pets: \n"
-	// 					+ tutor);
-    //         }
-    //     }
-    // }
-
-	// static void cadastrarPets(){
-	// 	System.out.println("Digite o nome do pet:");
-    //     String nome = scanner.nextLine();
-    //     System.out.println("Digite o tipo do pet:");
-    //     String tipo = scanner.nextLine();
-
-    //     // Criando um novo tutor
-    //     Pet pet = new Pet(nome, tipo);
-	// 	Tutor.pets.add(pet);
-	// }
 }
